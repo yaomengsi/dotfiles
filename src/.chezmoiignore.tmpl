@@ -1,0 +1,32 @@
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+Library/Application Support/App/file.conf
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**
+Documents
+{{ else }}
+.chezmoiscripts/sh/**
+.bash_aliases
+.bash_profile
+.bashrc
+.gnupg
+.gnupg/**
+.inputrc
+.oh-my-zsh
+.oh-my-zsh/**
+.profile
+.ssh
+.ssh/**
+.tmux/**
+.tmux.conf
+.tmux.conf.local
+.zprofile
+.zshenv
+.zshrc
+{{ end }}

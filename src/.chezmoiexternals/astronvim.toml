@@ -1,0 +1,8 @@
+[".config/mnvim"]
+    type = "git-repo"
+    url = "https://github.com/yaomengsi/template.git"
+    refreshPeriod = "168h"
+[".config/astronvim"]
+    type = "git-repo"
+    url = "https://github.com/yaomengsi/template.git"
+    refreshPeriod = "168h"

@@ -1,0 +1,25 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+{{   if eq .chezmoi.osRelease.id "fedora" -}}
+sudo dnf copr enable -y atim/starship
+sudo dnf install -y starship
+startship preset jetpack -o ~/.config/starship.toml
+
+sudo dnf copr enable -y lihaohong/yazi
+sudo dnf install -y yazi
+
+sudo dnf copr enable -y dejan/lazygit
+sudo dnf install -y lazygit
+
+sudo dnf install -y {{ .packages.common | join " " }}
+sudo dnf install -y {{ .packages.linux.fedora | join " " }}
+
+{{   else if eq .chezmoi.osRelease.id "ubuntu" -}}
+sudo apt update
+sudo apt install -y {{ .packages.common | join " " }}
+sudo apt install -y {{ .packages.linux.ubuntu | join " " }}
+
+{{   end -}}
+
+{{ end -}}

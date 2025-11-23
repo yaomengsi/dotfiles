@@ -1,0 +1,18 @@
+{{ if ne .chezmoi.os "windows" -}}
+#!/bin/bash
+
+if [ ! -d ~/.tmux ]; then
+  git clone --single-branch https://github.com/yaomengsi/.tmux.git ~/.tmux
+  ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
+  cp ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
+fi
+
+if [ ! -d ~/.config/mnvim ]; then
+  git clone https://github.com/yaomengsi/template.git ~/.config/mnvim
+fi
+
+if [ ! -d ~/.config/astronvim ]; then
+  git clone https://github.com/yaomengsi/template.git ~/.config/astronvim
+fi
+
+{{ end -}}

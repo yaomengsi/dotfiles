@@ -1,0 +1,24 @@
+packages:
+  common:
+    - 'git'
+    - 'curl'
+    - 'wget'
+    - 'gawk'
+    - 'tldr'
+    - 'tmux'
+    - 'direnv'
+    - 'htop'
+  darwin:
+    brews:
+    - 'git'
+    casks:
+    - 'google-chrome'
+  linux:
+    fedora:
+      - 'git'    
+      - 'neovim'
+      - 'golang'
+    ubuntu:
+      - 'git'
+    arch:
+      - 'git'
