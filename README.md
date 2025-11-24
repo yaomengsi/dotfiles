@@ -1,5 +1,17 @@
 # dotfiles
 
+## install
+
+```sh
+sudo dnf install chezmoi git
+
+chezmoi init git@github.com:USERNAME/dotfiles.git
+
+HTTP_PROXY=socks5://127.0.0.1:3067 HTTPS_PROXY=socks5://127.0.0.1:3067 ALL_PROXY=socks5://127.0.0.1:3067 chezmoi apply
+```
+
+## summary
+
 git
 chezmoi
 curl

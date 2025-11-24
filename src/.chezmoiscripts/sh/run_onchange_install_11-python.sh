@@ -51,20 +51,20 @@ else
     echo "pyenv already exists: $(command -v pyenv)"
 fi
 
-# if ! command -v uv &> /dev/null; then
-#     echo "Installing uv"
-#     curl -LsSf https://astral.sh/uv/install.sh | sh
-#     echo "uv installed successfully"
-# else
-#     # echo "Updating uv"
-#     # uv self update
-#     echo "uv already exists: $(command -v uv)"
-# fi
-#
-# # uv tool
-# install_if_missing pre-commit "uv tool install pre-commit --with pre-commit-uv --force-reinstall"
-# install_if_missing ruff "uv tool install ruff"
-# install_if_missing black "uv tool install black"
-# install_if_missing isort "uv tool install isort"
+if ! command -v uv &> /dev/null; then
+    echo "Installing uv"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    echo "uv installed successfully"
+else
+    # echo "Updating uv"
+    # uv self update
+    echo "uv already exists: $(command -v uv)"
+fi
+
+# uv tool
+install_if_missing pre-commit "uv tool install pre-commit --with pre-commit-uv --force-reinstall"
+install_if_missing ruff "uv tool install ruff"
+install_if_missing black "uv tool install black"
+install_if_missing isort "uv tool install isort"
 # install_if_missing flake8 "uv tool install flake8"
 # install_if_missing mypy "uv tool install mypy"

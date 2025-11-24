@@ -14,18 +14,18 @@ install_if_missing() {
     fi
 }
 
-# if ! command -v cargo &> /dev/null; then
-#     echo "Installing rust"
-#     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default
-#     echo "rust installed successfully"
-# else
-#     echo "rust is already installed"
-# fi
+if ! command -v cargo &> /dev/null; then
+    echo "Installing rust"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default
+    echo "rust installed successfully"
+else
+    echo "rust is already installed"
+fi
 
-# install_if_missing sccache "cargo install sccache"
+install_if_missing sccache "cargo install sccache"
 
 # astronvim
-# install_if_missing tree-sitter "cargo install tree-sitter-cli"
-# install_if_missing rg "cargo install ripgrep"
-# install_if_missing btm "cargo install bottom"
-# install_if_mission neovide "cargo install --git https://github.com/neovide/neovide.git"
+install_if_missing tree-sitter "cargo install tree-sitter-cli"
+install_if_missing rg "cargo install ripgrep"
+install_if_missing btm "cargo install bottom"
+# install_if_mission neovide "cargo install --git https://github.com/neovide/neovide"

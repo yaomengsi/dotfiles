@@ -4,7 +4,7 @@ set -eufo pipefail
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]; then
     echo "installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    CHSH=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo "oh-my-zsh installed successfully"
 else
     echo "oh-my-zsh is already installed"

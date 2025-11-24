@@ -18,6 +18,7 @@ packages:
       - 'git'    
       - 'neovim'
       - 'golang'
+      - 'openssl-devel'  # rust sccache
     ubuntu:
       - 'git'
     arch:
