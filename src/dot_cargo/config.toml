@@ -1,0 +1,20 @@
+[source.crates-io]
+# registry = "https://github.com/rust-lang/crates.io-index"
+# 指定镜像
+replace-with = "aliyun"
+
+# 阿里云
+[source.aliyun]
+registry = "sparse+https://mirrors.aliyun.com/crates.io-index/"
+[registries.aliyun]
+index = "sparse+https://mirrors.aliyun.com/crates.io-index/"
+
+# 清华大学
+[source.tuna]
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+[registries.tuna]
+index = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+
+# 中国科学技术大学
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
