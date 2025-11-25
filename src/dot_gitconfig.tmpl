@@ -1,5 +1,25 @@
+
+
+[includeIf "gitdir:~/repo/gitlab/"]
+    path = .gitconfig-gitlab
+[includeIf "gitdir:~/repo/github/"]
+    path = .gitconfig-github
+[includeIf "gitdir:~/repo/private/"]
+    path = .gitconfig-github
+
 [user]
 	email = {{ .email }}
 	name = {{ .name }}
+
+
 [http "https://github.com"]
-	proxy = socks5://172.20.96.1:3067
+	proxy = socks5h://172.20.96.1:3067
+
+
+[http]
+	sslVerify = false
+	postBuffer = 1048576000
+
+
+[core]
+	editor = vim
