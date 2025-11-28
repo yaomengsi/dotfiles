@@ -12,3 +12,5 @@ mkdir -p ~/lang/go
 mkdir -p ~/opt/supervisor
 
 mkdir -p ~/tmp
+
+mkdir -p ~/ws

@@ -32,4 +32,29 @@ else
     exit 1
 fi
 
+
+if [ -f /etc/os-release ]; then
+    source /etc/os-release
+    case $ID in 
+        fedora|almalinux)
+            echo $ID
+            # sudo dnf install -y zsh
+            ;;
+        ubuntu|debian)
+            echo $ID
+            # sudo apt update
+            # sudo apt install -y zsh
+            ;;
+        arch)
+            echo $ID
+            # sudo pacman -Syu --noconfirm zsh
+            ;;
+        *)
+            echo "Error: Unsupported OS distribution"
+            exit 1
+            ;;
+    esac
+fi
+
+
 echo "zsh installed successfully, chsh -s $(which zsh) or sudo chsh $USER to set zsh as default shell"
