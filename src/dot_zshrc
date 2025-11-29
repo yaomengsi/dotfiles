@@ -153,10 +153,13 @@ fi
 
 
 net_mode=""
-if [ -n "$WSL_DISTRO_NAME" ]; then
+if [ -f "/etc/wsl.conf" ]; then
     # read /mnt/c/Users/m/.wslconfig experimental networkingMode=Mirrored 的值
     # 去掉空格等隐藏字符
     net_mode=$(grep -E '^networkingMode' /mnt/c/Users/m/.wslconfig | cut -d'=' -f2 | tr -d '[:space:]')
+    echo "net_mode: $net_mode"
+    # net_mode is empty, set to Bridge
+    net_mode=${net_mode:-"Bridge"}
 fi
 
 # for wsl ip
@@ -175,8 +178,8 @@ case "${net_mode}" in
         PROXY_IP=${HOST_IP}
         ;;
     *)
-        # 有可能取不到 net_mode，使用 WSL_IP 作为备用
-        PROXY_IP=${WSL_IP}
+        # 有可能取不到 net_mode，使用 HOST_IP 作为备用
+        PROXY_IP=${HOST_IP}
         ;;
 esac
 
