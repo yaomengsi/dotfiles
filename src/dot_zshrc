@@ -152,10 +152,33 @@ if ! command -v vim &> /dev/null; then
 fi
 
 
+net_mode=""
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    # read /mnt/c/Users/m/.wslconfig experimental networkingMode=Mirrored 的值
+    # 去掉空格等隐藏字符
+    net_mode=$(grep -E '^networkingMode' /mnt/c/Users/m/.wslconfig | cut -d'=' -f2 | tr -d '[:space:]')
+fi
+
 # for wsl ip
 HOST_IP="$(ip route show | grep -i default | awk '{ print $3}')"
 # WSL_IP="$(hostname -I | awk '{print $1}')"
 WSL_IP="$(ip route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src") print $(i+1); exit}' || ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1 | head -1)"
+
+# if [ "${net_mode//[[:space:]]/}" = "Mirrored" ]; then
+case "${net_mode}" in
+    "Mirrored")
+        # Mirrored 模式下，主机和 WSL 虚拟机共享 IP
+        PROXY_IP=${WSL_IP}
+        ;;
+    "Bridge")
+        # Bridge 模式下，使用主机 IP
+        PROXY_IP=${HOST_IP}
+        ;;
+    *)
+        # 有可能取不到 net_mode，使用 WSL_IP 作为备用
+        PROXY_IP=${WSL_IP}
+        ;;
+esac
 
 # clash verge
 _HOST_PROXY_PORT=7897
@@ -165,8 +188,6 @@ _HOST_PROXY_PORT=7890
 _HOST_PROXY_PORT=3066
 # karing rules
 _HOST_PROXY_PORT=3067
-
-PROXY_IP=${HOST_IP}
 PROXY_PORT=${_HOST_PROXY_PORT}
 
 PROXY_IP_PORT="${PROXY_IP}:${PROXY_PORT}"
@@ -183,10 +204,13 @@ unset_proxy() {
 }
 
 set_proxy() {
-    echo "host ip:" "${HOST_IP}"
-    echo "wsl ip:" "${WSL_IP}"
+    echo "networkingMode: '${net_mode}'"
+    echo "host ip: ${HOST_IP}"
+    echo "wsl ip: ${WSL_IP}"
+    echo "PROXY_IP_PORT: ${PROXY_IP_PORT}"
     proxy_http="${HOST_PROXY_HTTP}"
     # proxy_http="${HOST_PROXY_SOCKS}"
+    export PROXY_IP_PORT="${PROXY_IP_PORT}"
     export http_proxy="${proxy_http}"
     export HTTP_PROXY="${proxy_http}"
     export https_proxy="${proxy_http}"
