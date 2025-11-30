@@ -14,7 +14,7 @@ Documentation=http://supervisord.org
 After=network.target
 
 [Service]
-Type=forking
+Type=simple
 ExecStart=/home/m/.local/bin/supervisord -n -c /home/m/etc/supervisord.conf
 ExecStop=/home/m/.local/bin/supervisorctl $OPTIONS shutdown
 ExecReload=/home/m/.local/bin/supervisorctl -c /home/m/etc/supervisord.conf $OPTIONS reload
