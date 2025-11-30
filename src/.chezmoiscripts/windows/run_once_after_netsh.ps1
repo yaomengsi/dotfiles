@@ -14,3 +14,5 @@ netsh interface portproxy show all
 
 # 所有的外部访问的端口 和 portproxy 目标端口都要添加到防火墙规则中
 netsh advfirewall firewall add rule name="0_allow_extenal_access_wsl2_port" dir=in action=allow protocol=TCP localport=80,443,8080,8443
+netsh advfirewall firewall add rule name="0_allow_extenal_sunshine_tcp" dir=in action=allow protocol=TCP localport=47984, 47989, 47990, 48010, 47998-48000
+netsh advfirewall firewall add rule name="0_allow_extenal_sunshine_udp" dir=in action=allow protocol=UDP localport=47984, 47989, 47990, 48010, 47998-48000
