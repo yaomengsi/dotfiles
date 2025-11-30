@@ -20,3 +20,4 @@
     uname_arch = "{{ output "uname" "-m" | trim }}"
 {{ else }}
     uname_arch = "{{ env "PROCESSOR_ARCHITECTURE" }}"
+{{ end }}
