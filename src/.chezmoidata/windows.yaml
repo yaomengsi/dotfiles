@@ -1,0 +1,36 @@
+packages:
+  windows:
+    scoop:
+      buckets:
+        - "main"
+        - "extras"
+        # - "nerd-fonts"
+        # - "nonportable"
+        # - "sysinternals"
+        # - "java"
+        # - "versions"
+      pkgs:
+        - "main/git"
+        - "main/chezmoi"
+        # - "main/pwsh"
+        # Fonts
+        # - "nerd-fonts/JetBrainsMono-NF"
+        # - "nerd-fonts/Noto-NF"
+
+        # Completion
+        - "extras/scoop-completion"
+
+        # Editors
+        # - "extras/vscode"
+        - "main/neovim"
+        - "extras/alacritty"
+
+        # Neccessary
+        - "main/7zip"
+        - "main/wget"
+
+        # CLI tools
+        - "main/tldr"
+
+        # Others
+        # - "extras/powertoys"
