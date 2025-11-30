@@ -28,4 +28,8 @@ install_if_missing sccache "cargo install sccache"
 install_if_missing tree-sitter "cargo install tree-sitter-cli"
 install_if_missing rg "cargo install ripgrep"
 install_if_missing btm "cargo install bottom"
-# install_if_mission neovide "cargo install --git https://github.com/neovide/neovide"
+
+
+# neovide dependencies
+sudo dnf install -y fontconfig-devel freetype-devel @development-tools libstdc++-static libstdc++-devel
+install_if_missing neovide "cargo install --git https://github.com/neovide/neovide"

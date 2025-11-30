@@ -157,7 +157,7 @@ if [ -f "/etc/wsl.conf" ]; then
     # read /mnt/c/Users/m/.wslconfig experimental networkingMode=Mirrored 的值
     # 去掉空格等隐藏字符
     net_mode=$(grep -E '^networkingMode' /mnt/c/Users/m/.wslconfig | cut -d'=' -f2 | tr -d '[:space:]')
-    echo "net_mode: $net_mode"
+    # echo "net_mode: $net_mode"
     # net_mode is empty, set to Bridge
     net_mode=${net_mode:-"Bridge"}
 fi

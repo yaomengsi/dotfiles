@@ -11,7 +11,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
 
 elif [ -f /etc/redhat-release ]; then
-    sudo dnf install -y gcc gcc-c++
+    sudo dnf install -y gcc gcc-c++ clang
     # sudo dnf group install -y c-development
     # sudo dnf group install -y develpment-tools
 
