@@ -204,6 +204,7 @@ unset_proxy() {
     unset HTTPS_PROXY
     unset all_proxy
     unset ALL_PROXY
+    echo "proxy unset: net_mode=${net_mode} host_ip=${HOST_IP} wsl_ip=${WSL_IP} proxy_ip_port=${PROXY_IP_PORT}"
 }
 
 set_proxy() {
