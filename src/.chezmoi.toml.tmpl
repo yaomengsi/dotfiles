@@ -16,4 +16,7 @@
     email = {{ $email | quote }}
     
     is_wsl = {{ $wsl }}
+{{ if ne .chezmoi.os "windows" }}
     uname_arch = "{{ output "uname" "-m" | trim }}"
+{{ else }}
+    uname_arch = "{{ env "PROCESSOR_ARCHITECTURE" }}"
