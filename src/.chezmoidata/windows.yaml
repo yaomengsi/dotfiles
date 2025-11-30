@@ -34,3 +34,13 @@ packages:
 
         # Others
         # - "extras/powertoys"
+config:
+  windows:
+    features:
+      enable:
+        # - "VirtualMachinePlatform"
+        # - "Microsoft-Windows-Subsystem-Linux"
+        # - "NetFx3"
+        # - "NetFx4-AdvSrvs"
+      disable:
+        # - "MicrosoftWindowsPowerShellV2"
