@@ -23,6 +23,7 @@ packages:
         # Editors
         # - "extras/vscode"
         - "main/neovim"
+        - "extras/neovide"
         - "extras/alacritty"
 
         # Neccessary
