@@ -8,9 +8,13 @@ Library/Application Support/App/file.conf
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
+.chezmoiexternals/windows/**
 .chezmoiscripts/windows/**
+.wslconfig
 Documents
+
 {{ else }}
+.chezmoiexternals/sh/**
 .chezmoiscripts/sh/**
 .chezmoiexternals/nvim.toml.tmpl
 .bash_aliases

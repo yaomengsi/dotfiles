@@ -1,0 +1,8 @@
+["AppData/Local/mnvim"]
+    type = "git-repo"
+    url = "https://github.com/yaomengsi/template.git"
+    refreshPeriod = "168h"
+["AppData/Local/astronvim"]
+    type = "git-repo"
+    url = "https://github.com/yaomengsi/template.git"
+    refreshPeriod = "168h"

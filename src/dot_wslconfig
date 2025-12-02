@@ -1,0 +1,7 @@
+[wsl2]
+networkingMode=Mirrored
+vmIdleTimeout=-1
+firewall=false
+
+[experimental]
+hostAddressLoopback=true
