@@ -1,5 +1,7 @@
+{{ if eq .chezmoi.os "linux" "darwin" }}
 #[".local/bin/nvim"]
 #    type = "file"
 #    url = "https://github.com/neovim/neovim/releases/download/stable/nvim-{{ .chezmoi.os }}-{{ .uname_arch }}.appimage"
 #    refreshPeriod = "672h"
 #    executable = true
+{{ end }}

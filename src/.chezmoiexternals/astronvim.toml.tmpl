@@ -1,8 +1,17 @@
+{{ if eq .chezmoi.os "windows" }}
 ["AppData/Local/mnvim"]
+{{ else }}
+[".config/mnvim"]
+{{ end }}
     type = "git-repo"
     url = "https://github.com/yaomengsi/template.git"
     refreshPeriod = "168h"
+
+{{ if eq .chezmoi.os "windows" }}
 ["AppData/Local/astronvim"]
+{{ else }}
+[".config/astronvim"]
+{{ end }}
     type = "git-repo"
     url = "https://github.com/yaomengsi/template.git"
     refreshPeriod = "168h"

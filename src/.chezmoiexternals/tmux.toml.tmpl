@@ -1,4 +1,6 @@
+{{ if eq .chezmoi.os "linux" "darwin" }}
 # [".tmux"]
 #     type = "git-repo"
 #     url = "https://github.com/yaomengsi/.tmux.git"
 #     refreshPeriod = "168h"
+{{ end }}
