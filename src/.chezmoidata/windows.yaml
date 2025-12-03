@@ -13,6 +13,7 @@ packages:
         - "main/git"
         - "main/chezmoi"
         # - "main/pwsh"
+        # - "main/starship"
         # Fonts
         # - "nerd-fonts/JetBrainsMono-NF"
         # - "nerd-fonts/Noto-NF"
@@ -32,6 +33,10 @@ packages:
 
         # CLI tools
         - "main/tldr"
+        - "main/direnv"
+        - "main/yazi"
+        - "main/gdu"
+        - "extras/lazygit"
 
         # Others
         # - "extras/powertoys"
