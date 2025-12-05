@@ -153,7 +153,7 @@ fi
 
 
 net_mode=""
-if [ -f "/etc/wsl.conf" ]; then
+if [ -f "/etc/wsl.conf" ] && [ -f "/mnt/c/Users/m/.wslconfig" ]; then
     # read /mnt/c/Users/m/.wslconfig experimental networkingMode=Mirrored 的值
     # 去掉空格等隐藏字符
     net_mode=$(grep -E '^networkingMode' /mnt/c/Users/m/.wslconfig | cut -d'=' -f2 | tr -d '[:space:]')
