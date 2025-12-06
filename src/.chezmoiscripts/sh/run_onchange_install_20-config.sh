@@ -15,3 +15,9 @@ mkdir -p ~/lang/go
 mkdir -p ~/tmp
 
 mkdir -p ~/ws
+
+mkdir -p ~/.config/lazygit
+touch ~/.config/lazygit/config.yml
+
+mkdir -p ~/.config/neovide
+touch ~/.config/neovide/config.toml
