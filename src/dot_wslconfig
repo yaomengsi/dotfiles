@@ -1,5 +1,5 @@
 [wsl2]
-networkingMode=Mirrored
+#networkingMode=Mirrored
 vmIdleTimeout=-1
 firewall=false
 

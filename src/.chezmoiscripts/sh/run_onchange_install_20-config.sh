@@ -8,9 +8,11 @@ mkdir -p ~/opt/supervisor
 mkdir -p ~/repo/private
 mkdir -p ~/repo/github
 
-mkdir -p ~/lang/python
-mkdir -p ~/lang/rust
+mkdir -p ~/lang/py
+mkdir -p ~/lang/rs
 mkdir -p ~/lang/go
+mkdir -p ~/lang/cc
+mkdir -p ~/lang/js
 
 mkdir -p ~/tmp
 
