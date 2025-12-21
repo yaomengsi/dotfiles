@@ -13,6 +13,14 @@ sudo dnf install -y yazi
 sudo dnf copr enable -y dejan/lazygit
 sudo dnf install -y lazygit
 
+# opengl
+# core
+sudo dnf install -y mesa-libGL mesa-libGLU
+# drivers for hardware acceleration
+sudo dnf install -y mesa-vulkan-drivers mesa-dri-drivers
+# utilities for glxgears glxinfo
+sudo dnf install -y glx-utils
+
 sudo dnf install -y {{ .packages.common | join " " }}
 sudo dnf install -y {{ .packages.linux.fedora | join " " }}
 
