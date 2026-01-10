@@ -4,5 +4,5 @@ Host github.com
     User {{ .email }}
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/github-id-rsa
-    #ProxyCommand nc -x `ip route show | grep -i default | awk '{ print $3}'`:3067 %h %p 2>/dev/null
+    #ProxyCommand nc -x `ip route show | grep -i default | awk '{ print $3}'`:3067 %h %p
     #ProxyCommand connect -H `ip route show | grep -i default | awk '{ print $3}'`:3067 %h %p

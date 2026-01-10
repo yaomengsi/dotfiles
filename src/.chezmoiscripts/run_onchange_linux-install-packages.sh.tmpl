@@ -1,6 +1,8 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+sudo timedatectl set-ntp true
+
 {{   if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf copr enable -y atim/starship
 sudo dnf install -y starship
@@ -15,11 +17,11 @@ sudo dnf install -y lazygit
 
 # opengl
 # core
-sudo dnf install -y mesa-libGL mesa-libGLU
+# sudo dnf install -y mesa-libGL mesa-libGLU
 # drivers for hardware acceleration
-sudo dnf install -y mesa-vulkan-drivers mesa-dri-drivers
+# sudo dnf install -y mesa-vulkan-drivers mesa-dri-drivers
 # utilities for glxgears glxinfo
-sudo dnf install -y glx-utils
+# sudo dnf install -y glx-utils
 
 sudo dnf install -y {{ .packages.common | join " " }}
 sudo dnf install -y {{ .packages.linux.fedora | join " " }}
