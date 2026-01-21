@@ -151,6 +151,9 @@ if ! command -v vim &> /dev/null; then
     alias vim="vi"
 fi
 
+# opencode
+export PATH=/home/m/.opencode/bin:$PATH
+
 
 net_mode=""
 if [ -f "/etc/wsl.conf" ] && [ -f "/mnt/c/Users/m/.wslconfig" ]; then

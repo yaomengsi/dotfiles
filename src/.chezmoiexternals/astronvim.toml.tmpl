@@ -1,4 +1,13 @@
 {{ if eq .chezmoi.os "windows" }}
+["AppData/Local/nvim"]
+{{ else }}
+[".config/nvim"]
+{{ end }}
+    type = "git-repo"
+    url = "https://github.com/yaomengsi/template.git"
+    refreshPeriod = "168h"
+
+{{ if eq .chezmoi.os "windows" }}
 ["AppData/Local/mnvim"]
 {{ else }}
 [".config/mnvim"]
