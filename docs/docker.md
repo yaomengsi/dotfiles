@@ -18,8 +18,8 @@
 ```ini
 [Service]
 # HTTP/HTTPS 代理
-Environment="HTTP_PROXY=http://192.168.112.1:3067"
-Environment="HTTPS_PROXY=http://192.168.112.1:3067"
+Environment="HTTP_PROXY=http://192.168.112.1:4067"
+Environment="HTTPS_PROXY=http://192.168.112.1:4067"
 
 # 排除代理的内网地址/域名（重要！）
 Environment="NO_PROXY=localhost,127.0.0.1,::1,10.*,*.your-company.com,docker-registry.example.com"
