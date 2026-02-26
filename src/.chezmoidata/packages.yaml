@@ -9,6 +9,7 @@ packages:
     - 'direnv'
     - 'htop'
     - 'gdu'
+    - 'cmake'
   darwin:
     brews:
     - 'git'
