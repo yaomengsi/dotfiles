@@ -228,3 +228,8 @@ set_proxy() {
     export NO_PROXY="localhost,127.0.0.1,172.20.*"
     echo "proxy:" "${proxy_http}"
 }
+
+if [ -f "${HOME}/.envrc" ]; then
+    source "${HOME}/.envrc"
+fi
+
