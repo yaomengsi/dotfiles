@@ -33,5 +33,5 @@ install_if_missing btm "cargo install bottom"
 
 
 # neovide dependencies
-sudo dnf install -y fontconfig-devel freetype-devel @development-tools libstdc++-static libstdc++-devel
+# sudo dnf install -y fontconfig-devel freetype-devel @development-tools libstdc++-static libstdc++-devel
 install_if_missing neovide "cargo install --git https://github.com/neovide/neovide"

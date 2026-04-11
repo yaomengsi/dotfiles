@@ -14,7 +14,7 @@ mkdir -p ~/lang/py
 mkdir -p ~/lang/rs
 mkdir -p ~/lang/go
 mkdir -p ~/lang/cc
-mkdir -p ~/lang/js
+mkdir -p ~/lang/ts
 
 mkdir -p ~/tmp
 
