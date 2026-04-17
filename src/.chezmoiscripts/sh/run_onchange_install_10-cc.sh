@@ -11,9 +11,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
 
 elif [ -f /etc/redhat-release ]; then
-    sudo dnf install -y gcc gcc-c++ clang clang-tools-extra
+    sudo dnf install -y gcc gcc-c++ clang clang-tools-extra clang-devel
     # sudo dnf group install -y c-development
     # sudo dnf group install -y develpment-tools
+    sudo dnf install -y cmake
+    sudo dnf install -y llvm llvm-devel
 
 elif [ -f /etc/debian_version ]; then
     sudo apt update

@@ -26,6 +26,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 elif [ -f /etc/redhat-release ]; then
     sudo dnf install -y make gcc patch zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk8-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2
     sudo dnf install -y libzstd-devel
+    sudo dnf install -y python3-devel
     echo "build python dependencies installed successfully"
 
 elif [ -f /etc/debian_version ]; then

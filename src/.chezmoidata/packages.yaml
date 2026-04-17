@@ -22,6 +22,7 @@ packages:
       - 'golang'
       - 'openssl'  # curl https
       - 'openssl-devel'  # rust sccache
+      - 'rsync'
     ubuntu:
       - 'git'
     arch:

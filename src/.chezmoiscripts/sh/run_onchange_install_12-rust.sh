@@ -22,7 +22,7 @@ else
     echo "rust is already installed"
 fi
 
-install_if_missing rust-analyzer "rustup component add rust-analyzer"
+install_if_missing rust-analyzer "rustup component add rust-analyzer --toolchain stable"
 
 install_if_missing sccache "cargo install sccache"
 
