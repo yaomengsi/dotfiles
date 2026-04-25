@@ -8,7 +8,7 @@ packages:
     - 'tmux'
     - 'direnv'
     - 'htop'
-    - 'gdu'
+    - 'entr'
     - 'cmake'
   darwin:
     brews:
@@ -17,9 +17,8 @@ packages:
     - 'google-chrome'
   linux:
     fedora:
-      - 'git'    
+      - 'git'
       - 'neovim'
-      - 'golang'
       - 'openssl'  # curl https
       - 'openssl-devel'  # rust sccache
       - 'rsync'

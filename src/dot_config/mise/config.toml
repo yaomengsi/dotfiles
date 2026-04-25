@@ -1,0 +1,23 @@
+[settings]
+disable_backends = ["asdf"]
+
+[settings.python]
+compile = true
+uv_venv_auto = "source"
+
+[tools]
+bottom = "latest"
+gdu = "latest"
+go = "latest"
+lazygit = "latest"
+node = "lts"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@openai/codex" = "latest"
+python = "latest"
+ripgrep = "latest"
+rtk = "latest"
+rust = "latest"
+rust-analyzer = "latest"
+sccache = "latest"
+tree-sitter = "latest"
+uv = "latest"

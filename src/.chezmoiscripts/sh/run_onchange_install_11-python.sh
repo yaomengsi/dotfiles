@@ -45,21 +45,22 @@ else
     echo "Error: Unsupported OS distribution"
 fi
 
-if [ ! -d ~/.pyenv ]; then
-    echo "Installing pyenv"
-    curl https://pyenv.run | bash
-    echo "pyenv installed successfully"
-else
-    # echo "Updating pyenv"
-    # pyenv update
-    echo "~/.pyenv already exists"
-fi
+# pyenv 已移除，使用 mise 管理 Python 运行时版本
+# if [ ! -d ~/.pyenv ]; then
+#     echo "Installing pyenv"
+#     curl https://pyenv.run | bash
+#     echo "pyenv installed successfully"
+# else
+#     # echo "Updating pyenv"
+#     # pyenv update
+#     echo "~/.pyenv already exists"
+# fi
 
-if ! command -v pyenv &> /dev/null; then
-    echo "please check .bashrc or .zshrc to seen if pyenv is installed"
-else
-    echo "pyenv already exists: $(command -v pyenv)"
-fi
+# if ! command -v pyenv &> /dev/null; then
+#     echo "please check .bashrc or .zshrc to seen if pyenv is installed"
+# else
+#     echo "pyenv already exists: $(command -v pyenv)"
+# fi
 
 if ! command -v uv &> /dev/null; then
     echo "Installing uv"
