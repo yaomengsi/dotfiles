@@ -8,3 +8,6 @@ if ! command -v mise &> /dev/null; then
 else
     echo "mise already exists: $(command -v mise)"
 fi
+
+echo "Installing/updating mise tools..."
+mise install
