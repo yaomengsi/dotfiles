@@ -4,12 +4,9 @@ packages:
     - 'curl'
     - 'wget'
     - 'gawk'
-    - 'tldr'
     - 'tmux'
-    - 'direnv'
     - 'htop'
     - 'entr'
-    - 'cmake'
   darwin:
     brews:
     - 'git'
@@ -18,7 +15,6 @@ packages:
   linux:
     fedora:
       - 'git'
-      - 'neovim'
       - 'openssl'  # curl https
       - 'openssl-devel'  # rust sccache
       - 'rsync'

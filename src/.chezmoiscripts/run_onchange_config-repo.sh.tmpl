@@ -7,12 +7,8 @@ if [ ! -d ~/.tmux ]; then
   cp ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 fi
 
-if [ ! -d ~/.config/mnvim ]; then
-  git clone https://github.com/yaomengsi/template.git ~/.config/mnvim
-fi
-
-if [ ! -d ~/.config/astronvim ]; then
-  git clone https://github.com/yaomengsi/template.git ~/.config/astronvim
+if [ ! -d ~/.config/nvim ]; then
+  git clone https://github.com/yaomengsi/template.git ~/.config/nvim
 fi
 
 {{ end -}}

@@ -8,6 +8,7 @@ uv_venv_auto = "source"
 [tools]
 bottom = "latest"
 cmake = "latest"
+direnv = "latest"
 fd = "latest"
 fzf = "latest"
 gdu = "latest"

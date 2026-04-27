@@ -120,10 +120,10 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 # starship
 eval "$(starship init zsh)"
-# direnv
-eval "$(direnv hook zsh)"
 # mise
 eval "$(mise activate zsh)"
+# direnv
+eval "$(direnv hook zsh)"
 
 
 # pyenv
@@ -138,7 +138,7 @@ eval "$(mise activate zsh)"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# rust sccache
+# TODO:rust sccache
 if [ -f "$HOME/.cargo/bin/sccache" ]; then
     export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"
 fi
@@ -152,9 +152,6 @@ alias nvide="NVIM_APPNAME=mnvim neovide --wsl"
 if ! command -v vim &> /dev/null; then
     alias vim="vi"
 fi
-
-# opencode
-export PATH=/home/m/.opencode/bin:$PATH
 
 
 net_mode=""
@@ -234,4 +231,3 @@ set_proxy() {
 if [ -f "${HOME}/.envrc" ]; then
     source "${HOME}/.envrc"
 fi
-
