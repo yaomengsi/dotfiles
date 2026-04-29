@@ -33,11 +33,26 @@ make apply
 - OS package managers install system libraries and build dependencies
 - `mise` manages language runtimes and developer tools declaratively
 
+## orchestration
+
+- `src/.chezmoiscripts/sh/run_once_01-system-deps.sh` installs system packages and build dependencies, including `supervisor`
+- `src/.chezmoiscripts/sh/run_once_03-install-mise.sh` installs `mise`
+- `src/.chezmoiscripts/sh/run_after_install_04-mise-tools.sh.tmpl` runs `mise install` after apply and tracks `mise` config changes
+- `src/.chezmoiscripts/sh/run_onchange_install_11-python.sh` installs Python CLI tools via `mise exec -- uv`
+
 ## runtime management
 
 - Core runtimes are pinned to stable major/minor versions in `src/dot_config/mise/config.toml`
 - Current defaults: `python 3.12`, `node 22`, `go 1.24`, `rust 1.86`
 - Leaf CLI tools can stay on `latest`
+
+## managed components
+
+- Shell: `zsh`, `oh-my-zsh`, `zsh-autosuggestions`, `fast-syntax-highlighting`, `direnv`, `starship`
+- Editors and terminal tools: `neovim`, AstroNvim, `tmux`, `lazygit`, `yazi`
+- Runtimes: Python with `uv`, Node.js, Rust with `sccache`, Go, C/C++ toolchains
+- Services and local tooling: `supervisor`, Redis, SSH config, Git config
+- Home layout and workspace directories: `~/repo`, `~/lang`, `~/tmp`, `~/etc`, `~/opt`, `~/ws/workspace`
 
 - shell
   - zsh
