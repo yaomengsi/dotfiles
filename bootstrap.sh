@@ -28,7 +28,7 @@ install_chezmoi() {
     if command -v brew >/dev/null 2>&1; then
         brew install chezmoi
     else
-        sudo sh -c "$(curl -fsLS https://get.chezmoi.io)"
+        sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
     fi
     info "chezmoi installed successfully"
 }

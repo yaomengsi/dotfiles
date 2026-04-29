@@ -35,10 +35,10 @@ make apply
 
 ## orchestration
 
-- `src/.chezmoiscripts/sh/run_once_01-system-deps.sh` installs system packages and build dependencies, including `supervisor`
+- `src/.chezmoiscripts/sh/run_once_01-system-deps.sh` installs system packages and build dependencies
 - `src/.chezmoiscripts/sh/run_once_03-install-mise.sh` installs `mise`
 - `src/.chezmoiscripts/sh/run_after_install_04-mise-tools.sh.tmpl` runs `mise install` after apply and tracks `mise` config changes
-- `src/.chezmoiscripts/sh/run_onchange_install_11-python.sh` installs Python CLI tools via `mise exec -- uv`
+- `src/.chezmoiscripts/sh/run_onchange_install_11-python.sh` installs Python CLI tools via `mise exec -- uv`, including `supervisor`
 
 ## runtime management
 

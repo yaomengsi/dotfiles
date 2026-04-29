@@ -1,5 +1,7 @@
 # supervisor
 
+`supervisor` is installed by `uv tool install supervisor` in `run_onchange_install_11-python.sh`.
+
 ```sh
 command -v supervisord
 command -v supervisorctl

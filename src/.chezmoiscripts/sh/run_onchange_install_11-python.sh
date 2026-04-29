@@ -33,3 +33,4 @@ install_if_missing black "$MISE_BIN" exec -- uv tool install black
 install_if_missing isort "$MISE_BIN" exec -- uv tool install isort
 # install_if_missing flake8 "uv tool install flake8"
 # install_if_missing mypy "uv tool install mypy"
+install_if_missing supervisorctl "$MISE_BIN" exec -- uv tool install supervisor
