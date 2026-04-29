@@ -1,11 +1,16 @@
 # supervisor
 
 ```sh
+command -v supervisord
+command -v supervisorctl
+
 vim /etc/systemd/system/supervisord.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable --now supervisord.service
 ```
+
+Use the paths returned by `command -v` in the unit below.
 
 ```conf
 [Unit]
@@ -15,9 +20,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/m/.local/bin/supervisord -n -c /home/m/etc/supervisord.conf
-ExecStop=/home/m/.local/bin/supervisorctl $OPTIONS shutdown
-ExecReload=/home/m/.local/bin/supervisorctl -c /home/m/etc/supervisord.conf $OPTIONS reload
+ExecStart=<supervisord-path> -n -c /home/m/etc/supervisord.conf
+ExecStop=<supervisorctl-path> $OPTIONS shutdown
+ExecReload=<supervisorctl-path> -c /home/m/etc/supervisord.conf $OPTIONS reload
 KillMode=process
 Restart=on-failure
 RestartSec=50s

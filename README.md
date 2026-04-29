@@ -3,25 +3,41 @@
 ## install
 
 ```sh
-sudo dnf install chezmoi git
+git clone <your-repo-url> ~/.local/share/chezmoi
+cd ~/.local/share/chezmoi
 
-chezmoi init git@github.com:USERNAME/dotfiles.git
+./bootstrap.sh
 
-HTTP_PROXY=socks5://127.0.0.1:4067 HTTPS_PROXY=socks5://127.0.0.1:4067 ALL_PROXY=socks5://127.0.0.1:4067 chezmoi apply
+chezmoi init --apply
 ```
 
-## summary
+If you need a proxy for the first apply:
 
-git
-chezmoi
-curl
-wget
+```sh
+HTTP_PROXY=socks5://127.0.0.1:4067 \
+HTTPS_PROXY=socks5://127.0.0.1:4067 \
+ALL_PROXY=socks5://127.0.0.1:4067 \
+chezmoi apply
+```
 
-golang
-tldr
-neovim
-yazi
-awk
+Later updates:
+
+```sh
+make apply
+```
+
+## bootstrap model
+
+- `bootstrap.sh` installs the minimum prerequisites: `git`, `curl`, `mise`, `chezmoi`
+- `chezmoi` manages dotfiles and orchestration scripts
+- OS package managers install system libraries and build dependencies
+- `mise` manages language runtimes and developer tools declaratively
+
+## runtime management
+
+- Core runtimes are pinned to stable major/minor versions in `src/dot_config/mise/config.toml`
+- Current defaults: `python 3.12`, `node 22`, `go 1.24`, `rust 1.86`
+- Leaf CLI tools can stay on `latest`
 
 - shell
   - zsh
@@ -40,13 +56,15 @@ awk
       tmux set-window-option -g window-status-current-format ""
 - lang
   - python
-    - pyenv
+    - mise
     - uv
   - node
-    - nvm
+    - mise
   - rust
+    - mise
     - sccache
   - go
+    - mise
   - c cpp
     - gcc
     - clang

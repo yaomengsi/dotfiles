@@ -7,6 +7,18 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 info() { printf "${GREEN}%s${NC}\n" "$*"; }
 
+install_mise() {
+    if command -v mise >/dev/null 2>&1; then
+        info "mise already installed: $(mise --version)"
+        return 0
+    fi
+
+    info "Installing mise..."
+    curl -fsSL https://mise.run | sh
+    export PATH="$HOME/.local/bin:$PATH"
+    info "mise installed successfully: $HOME/.local/bin/mise"
+}
+
 install_chezmoi() {
     if command -v chezmoi >/dev/null 2>&1; then
         info "chezmoi already installed: $(chezmoi --version)"
@@ -53,5 +65,6 @@ install_packages() {
 
 info "==> chezmoi bootstrap starting..."
 install_packages
+install_mise
 install_chezmoi
-info "==> done. run 'chezmoi init --apply <your-repo>' to apply dotfiles"
+info "==> done. run 'chezmoi init --apply' to apply dotfiles"

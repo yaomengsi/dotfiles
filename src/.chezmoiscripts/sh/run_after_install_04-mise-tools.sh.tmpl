@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+export PATH="$HOME/.local/bin:$PATH"
+
+MISE_BIN="$HOME/.local/bin/mise"
+if command -v mise &> /dev/null; then
+    MISE_BIN="$(command -v mise)"
+fi
+
+if [ ! -x "$MISE_BIN" ]; then
+    echo "mise is not installed yet"
+    exit 1
+fi
+
+# Force chezmoi to rerun this script when the declarative mise config changes.
+cat >/dev/null <<'EOF'
+{{ include "dot_config/mise/config.toml" }}
+EOF
+
+echo "Installing/updating tools declared in ~/.config/mise/config.toml"
+"$MISE_BIN" install
