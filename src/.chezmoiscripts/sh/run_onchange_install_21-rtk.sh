@@ -4,8 +4,6 @@ set -eufo pipefail
 
 if command -v rtk &> /dev/null; then
     RTK_CMD=(rtk)
-elif command -v mise &> /dev/null; then
-    RTK_CMD=(mise exec -- rtk)
 else
     echo "rtk not found, skipping RTK init"
     exit 0
