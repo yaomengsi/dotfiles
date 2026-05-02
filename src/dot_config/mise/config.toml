@@ -25,7 +25,7 @@ rtk = "latest"
 rust = ["1.95", "stable"]
 rust-analyzer = "latest"
 sccache = "latest"
-tlrc = "latest"
+tlrc = { version = "latest", os = ["linux/amd64", "darwin", "windows"] }
 tree-sitter = "latest"
 uv = "latest"
 yazi = "latest"
