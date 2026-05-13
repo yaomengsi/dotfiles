@@ -124,12 +124,6 @@ fi
 if command -v starship >/dev/null 2>$1; then
     eval "$(starship init zsh)"
 fi
-
-# mise
-if command -v mise >/dev/null 2>$1; then
-    eval "$(mise activate zsh)"
-fi
-
 # direnv
 if command -v direnv >/dev/null 2>$1; then
     eval "$(direnv hook zsh)"
@@ -158,6 +152,12 @@ alias nvide="NVIM_APPNAME=mnvim neovide --wsl"
 # fedora no vim default, use vi instead
 if ! command -v vim &> /dev/null; then
     alias vim="vi"
+fi
+
+
+# mise
+if command -v mise >/dev/null 2>$1; then
+    eval "$(mise activate zsh)"
 fi
 
 
