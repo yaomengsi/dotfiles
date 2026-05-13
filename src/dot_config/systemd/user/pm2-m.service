@@ -1,0 +1,24 @@
+[Unit]
+Description=PM2 process manager
+Documentation=https://pm2.keymetrics.io/
+After=network.target
+
+[Service]
+Type=forking
+User=m
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+Environment=PATH=/home/m/.local/share/pnpm/bin:/home/m/.local/share/mise/installs/go/1.26.3/bin:/home/m/.local/share/mise/installs/node/24/bin:/home/m/.local/share/mise/installs/node/lts/bin:/home/m/.local/share/mise/installs/npm-9router/latest/bin:/home/m/.local/share/mise/installs/npm-pm2/latest/bin:/home/m/.local/share/mise/installs/pnpm/11.1.1:/home/m/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/home/m/.cargo/bin:/home/m/.local/share/mise/installs/node/24.15.0/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+Environment=PM2_HOME=/home/m/.pm2
+PIDFile=/home/m/.pm2/pm2.pid
+Restart=on-failure
+
+ExecStart=/home/m/.local/share/mise/installs/npm-pm2/7.0.1/lib/node_modules/pm2/bin/pm2 resurrect
+ExecReload=/home/m/.local/share/mise/installs/npm-pm2/7.0.1/lib/node_modules/pm2/bin/pm2 reload all
+ExecStop=/home/m/.local/share/mise/installs/npm-pm2/7.0.1/lib/node_modules/pm2/bin/pm2 kill
+
+[Install]
+WantedBy=default.target
+; WantedBy=multi-user.target
+
