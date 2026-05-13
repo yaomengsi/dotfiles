@@ -5,6 +5,9 @@ disable_backends = ["asdf"]
 compile = true
 uv_venv_auto = "source"
 
+[settings.npm]
+package_manager = "pnpm"
+
 [tools]
 bottom = "latest"
 cmake = "latest"
