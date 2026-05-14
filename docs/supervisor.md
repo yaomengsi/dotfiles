@@ -22,9 +22,9 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=<supervisord-path> -n -c /home/m/etc/supervisord.conf
+ExecStart=<supervisord-path> -n -c %h/etc/supervisord.conf
 ExecStop=<supervisorctl-path> $OPTIONS shutdown
-ExecReload=<supervisorctl-path> -c /home/m/etc/supervisord.conf $OPTIONS reload
+ExecReload=<supervisorctl-path> -c %h/etc/supervisord.conf $OPTIONS reload
 KillMode=process
 Restart=on-failure
 RestartSec=50s

@@ -1,0 +1,24 @@
+[Unit]
+Description=Telegram Bot (aiogram)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/repo/private/explorer_fastapi
+ExecStart=%h/repo/private/explorer_fastapi/start_tg_bot.sh
+Environment=PYTHONPATH=%h/repo/private/explorer_fastapi/src
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=LOGURU_COLORIZE=False
+Environment=LOGURU_SERIALIZE=False
+Environment=PROMETHEUS_MULTIPROCESS_DIR=/tmp/
+Environment=PROMETHEUS_MULTIPROC_DIR=/tmp/
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+KillMode=control-group
+StandardOutput=append:%h/repo/private/explorer_fastapi/log/stdout_tg_bot.log
+StandardError=append:%h/repo/private/explorer_fastapi/log/stderr_tg_bot.log
+
+[Install]
+WantedBy=default.target

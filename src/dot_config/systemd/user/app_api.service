@@ -1,0 +1,24 @@
+[Unit]
+Description=Explorer API (gunicorn)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/repo/private/explorer_fastapi
+ExecStart=%h/repo/private/explorer_fastapi/.venv/bin/gunicorn -c conf/gunicorn.conf.py explorer.api.asgi:app
+Environment=PYTHONPATH=%h/repo/private/explorer_fastapi/src
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=LOGURU_COLORIZE=False
+Environment=LOGURU_SERIALIZE=False
+Environment=PROMETHEUS_MULTIPROCESS_DIR=/tmp/
+Environment=PROMETHEUS_MULTIPROC_DIR=/tmp/
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+KillMode=control-group
+StandardOutput=append:%h/repo/private/explorer_fastapi/log/stdout_app_api.log
+StandardError=append:%h/repo/private/explorer_fastapi/log/stderr_app_api.log
+
+[Install]
+WantedBy=default.target

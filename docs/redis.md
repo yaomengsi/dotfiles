@@ -12,15 +12,15 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Environment="REDIS_CONF_FILE=/home/m/redis/6379/redis.conf"
+Environment="REDIS_CONF_FILE=%h/redis/6379/redis.conf"
 Environment="REDISCLI_AUTH=$(grep '^requirepass' ${REDIS_CONF_FILE} | awk '{print $2}')"
 Environment="REDISCLI_PORT=$(grep '^\s*port' ${REDIS_CONF_FILE} | awk '{print $2}' || echo '6379')"
 
 #ExecStart=/usr/local/bin/redis-server --supervised systemd --daemonize no
 ## Alternatively, have redis-server load a configuration file:
-ExecStart=/home/m/redis/redis-server ${REDIS_CONF_FILE} --supervised systemd
-ExecStop=/home/m/redis/redis-cli -p {REDIS_PORT} shutdown
-ExecReload=/home/m/redis/redis-cli -p {REDIS_PORT} CONFIG REWRITE
+ExecStart=%h/redis/redis-server ${REDIS_CONF_FILE} --supervised systemd
+ExecStop=%h/redis/redis-cli -p {REDIS_PORT} shutdown
+ExecReload=%h/redis/redis-cli -p {REDIS_PORT} CONFIG REWRITE
 
 # 配置 notify 需要 redis 编译前安装 systemd-devel pkg-config, 否则配置 simple
 Type=notify
