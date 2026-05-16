@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 WorkingDirectory=%h/.9router
 ExecStart=%h/.local/share/mise/installs/npm-9router/latest/bin/9router
-Environment=PATH=%h/.local/share/mise/installs/node/lts/bin:%h/.local/share/mise/installs/npm-9router/latest/bin:/usr/bin:/bin:/usr/sbin:/sbin
+Environment=PATH=%h/.local/share/mise/installs/node/lts/bin:%h/.local/share/mise/installs/npm-9router/latest/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=60

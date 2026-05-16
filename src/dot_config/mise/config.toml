@@ -10,6 +10,7 @@ package_manager = "pnpm"
 
 [tools]
 bottom = "latest"
+btop = "latest"
 cmake = "latest"
 direnv = "latest"
 docker-cli = "latest"
@@ -21,6 +22,7 @@ go = ["1.26", "latest"]
 jq = "latest"
 just = "latest"
 lazygit = "latest"
+lsd = "latest"
 neovim = "latest"
 ninja = "latest"
 node = ["24", "lts"]

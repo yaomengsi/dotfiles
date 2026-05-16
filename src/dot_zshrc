@@ -132,7 +132,8 @@ eval "$(uvx --generate-shell-completion zsh)"
 eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
-
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # rust sccache
 if command -v sccache &> /dev/null; then
