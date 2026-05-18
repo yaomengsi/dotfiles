@@ -29,7 +29,10 @@ node = ["24", "lts"]
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:pm2" = "latest"
+"npm:typescript" = "latest"
 opencode = "latest"
+"pipx:pre-commit" = { version = "latest", pipx_args = "--with pre-commit-uv --force-reinstall" }
+"pipx:ruff" = "latest"
 pnpm = "latest"
 python = ["3.12", "3.14", "latest"]
 ripgrep = "latest"
