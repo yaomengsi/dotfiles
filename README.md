@@ -39,6 +39,28 @@ make apply
 - `src/.chezmoiscripts/sh/run_once_03-install-mise.sh` installs `mise`
 - `src/.chezmoiscripts/sh/run_after_install_04-mise-tools.sh.tmpl` runs `mise install` after apply and tracks `mise` config changes
 - `src/.chezmoiscripts/sh/run_onchange_install_11-python.sh` installs Python CLI tools via `mise exec -- uv`, including `supervisor`
+- `src/.chezmoiscripts/sh/run_onchange_install_31-compose-stacks.sh.tmpl` enables linger and `systemctl --user enable --now` for tracked docker compose stacks
+
+## container stacks (autostart at boot)
+
+Long-running dev containers live as user-level systemd units so they start on boot via `loginctl enable-linger`. Pattern:
+
+- compose file: `src/dot_config/containers/<stack>/compose.yaml` → `~/.config/containers/<stack>/compose.yaml`
+- systemd unit: `src/dot_config/systemd/user/<stack>.service` → `~/.config/systemd/user/<stack>.service` (calls `docker compose up -d` / `down` in that working dir)
+- enablement: add the unit name and host data dir to the `STACKS` array in `src/.chezmoiscripts/sh/run_onchange_install_31-compose-stacks.sh.tmpl`
+
+Currently managed:
+
+- `9router.service` - [decolua/9router](https://github.com/decolua/9router) dashboard on `127.0.0.1:20128`, data in `~/.9router`
+
+Operations:
+
+```sh
+systemctl --user status 9router.service
+systemctl --user restart 9router.service
+journalctl --user -u 9router.service -f
+docker compose -f ~/.config/containers/9router/compose.yaml pull   # then restart unit
+```
 
 ## runtime management
 

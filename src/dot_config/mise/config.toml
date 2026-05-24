@@ -28,12 +28,13 @@ lsd = "latest"
 neovim = "latest"
 ninja = "latest"
 node = ["24", "lts"]
+"npm:@colbymchenry/codegraph" = "latest"
 "npm:pm2" = "latest"
 "npm:typescript" = "latest"
 opencode = "latest"
 "pipx:pre-commit" = { version = "latest", pipx_args = "--with pre-commit-uv --force-reinstall" }
 pnpm = "latest"
-python = ["3.12", "3.14", "latest"]
+python = ["3.14", "3.12", "latest"]
 ripgrep = "latest"
 rtk = "latest"
 ruff = "latest"

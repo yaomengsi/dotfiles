@@ -22,6 +22,26 @@ configure_docker_group() {
     echo "User $docker_user was added to the docker group; log out and back in for it to take effect"
 }
 
+install_compose_plugin() {
+    if docker compose version &> /dev/null; then
+        return 0
+    fi
+    case $ID in
+        fedora|almalinux|rocky|centos|rhel)
+            sudo dnf install -y docker-compose-plugin
+            ;;
+        ubuntu|debian)
+            sudo apt-get install -y docker-compose-plugin
+            ;;
+        arch)
+            sudo pacman -S --noconfirm --needed docker-compose
+            ;;
+        *)
+            echo "skip docker compose plugin install on unsupported OS: $ID"
+            ;;
+    esac
+}
+
 docker_runtime_installed() {
     case $ID in
         fedora|almalinux|rocky|centos|rhel)
@@ -63,6 +83,7 @@ elif [ -f /etc/os-release ]; then
         echo "docker runtime is already installed"
         enable_docker_service
         configure_docker_group
+        install_compose_plugin
         exit 0
     fi
 
@@ -76,9 +97,10 @@ elif [ -f /etc/os-release ]; then
             sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
             # install docker
-            sudo dnf install -y docker-ce containerd.io
+            sudo dnf install -y docker-ce containerd.io docker-compose-plugin
             enable_docker_service
             configure_docker_group
+            install_compose_plugin
             ;;
         almalinux|rocky|centos|rhel)
             echo $ID
@@ -87,9 +109,10 @@ elif [ -f /etc/os-release ]; then
             sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
             # install docker
-            sudo dnf install -y docker-ce containerd.io
+            sudo dnf install -y docker-ce containerd.io docker-compose-plugin
             enable_docker_service
             configure_docker_group
+            install_compose_plugin
             ;;
         ubuntu|debian)
             echo $ID
@@ -103,15 +126,17 @@ elif [ -f /etc/os-release ]; then
 
             # install docker
             sudo apt-get update
-            sudo apt-get install -y docker-ce containerd.io
+            sudo apt-get install -y docker-ce containerd.io docker-compose-plugin
             enable_docker_service
             configure_docker_group
+            install_compose_plugin
             ;;
         arch)
             echo $ID
-            sudo pacman -Syu --noconfirm docker
+            sudo pacman -Syu --noconfirm --needed docker docker-compose
             enable_docker_service
             configure_docker_group
+            install_compose_plugin
             ;;
         *)
             echo "Error: Unsupported OS distribution"
