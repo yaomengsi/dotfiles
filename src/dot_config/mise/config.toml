@@ -33,6 +33,7 @@ node = ["24", "lts"]
 "npm:typescript" = "latest"
 opencode = "latest"
 "pipx:pre-commit" = { version = "latest", pipx_args = "--with pre-commit-uv --force-reinstall" }
+"pipx:pyrefly" = "latest"
 pnpm = "latest"
 python = ["3.14", "3.12", "latest"]
 ripgrep = "latest"
