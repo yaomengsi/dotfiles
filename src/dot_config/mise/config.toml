@@ -28,6 +28,7 @@ lsd = "latest"
 neovim = "latest"
 ninja = "latest"
 node = ["24", "lts"]
+"npm:9router" = "latest"
 "npm:@colbymchenry/codegraph" = "latest"
 "npm:pm2" = "latest"
 "npm:typescript" = "latest"
