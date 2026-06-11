@@ -49,5 +49,6 @@ shfmt = "latest"
 tlrc = { version = "latest", os = ["linux/amd64", "darwin", "windows"] }
 tmux = "latest"
 tree-sitter = "latest"
+usage = "latest"
 uv = "latest"
 yazi = "latest"
