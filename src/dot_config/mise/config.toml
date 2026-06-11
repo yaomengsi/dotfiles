@@ -1,5 +1,6 @@
 [settings]
 disable_backends = ["asdf"]
+minimum_release_age = "5d"
 
 [settings.python]
 compile = true
@@ -23,7 +24,6 @@ fzf = "latest"
 gdu = "latest"
 go = ["1.26", "latest"]
 jq = "latest"
-just = "latest"
 lazygit = "latest"
 lsd = "latest"
 neovim = "latest"
@@ -47,6 +47,7 @@ sccache = "latest"
 shellcheck = "latest"
 shfmt = "latest"
 tlrc = { version = "latest", os = ["linux/amd64", "darwin", "windows"] }
+tmux = "latest"
 tree-sitter = "latest"
 uv = "latest"
 yazi = "latest"
