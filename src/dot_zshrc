@@ -76,7 +76,6 @@ plugins=(
     zsh-autosuggestions
     # zsh-syntax-highlighting
     fast-syntax-highlighting
-    direnv
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -131,8 +130,6 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 # starship
 eval "$(starship init zsh)"
-# direnv
-eval "$(direnv hook zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
