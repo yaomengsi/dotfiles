@@ -1,6 +1,6 @@
 [settings]
 disable_backends = ["asdf"]
-minimum_release_age = "5d"
+minimum_release_age = "2d"
 
 [settings.python]
 compile = true
