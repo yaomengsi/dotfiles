@@ -12,6 +12,7 @@ packages:
       pkgs:
         - "main/git"
         - "main/chezmoi"
+        - "main/mise"
         # - "main/pwsh"
         - "main/starship"
         # Fonts
@@ -33,7 +34,6 @@ packages:
 
         # CLI tools
         # - "main/tldr"
-        # - "main/direnv"
         # - "main/yazi"
         # - "main/gdu"
         # - "extras/lazygit"
