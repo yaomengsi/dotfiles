@@ -11,6 +11,8 @@ Set-PsFzfOption -AltCCommand $commandOverride
 # tab
 Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
 
+$env:YAZI_FILE_ONE = 'C:\Users\m\scoop\apps\git\current\usr\bin'
+
 function Start-mnvim { $env:NVIM_APPNAME="mnvim"; nvim }
 Set-Alias -Name mnvim -Value Start-mnvim
 function Start-nvide { $env:NVIM_APPNAME="mnvim"; neovide }
