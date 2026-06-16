@@ -14,6 +14,7 @@ packages:
         - "main/chezmoi"
         - "main/mise"
         - "main/pwsh"
+        # - "main/gcc"
         - "main/starship"
         # Fonts
         # - "nerd-fonts/JetBrainsMono-NF"
@@ -21,6 +22,7 @@ packages:
 
         # Completion
         - "extras/scoop-completion"
+        - "extras/psfzf"
 
         # Editors
         # - "extras/vscode"
