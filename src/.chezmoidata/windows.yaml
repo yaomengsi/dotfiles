@@ -13,7 +13,7 @@ packages:
         - "main/git"
         - "main/chezmoi"
         - "main/mise"
-        # - "main/pwsh"
+        - "main/pwsh"
         - "main/starship"
         # Fonts
         # - "nerd-fonts/JetBrainsMono-NF"
