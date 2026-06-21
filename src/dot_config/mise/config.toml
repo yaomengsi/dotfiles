@@ -1,6 +1,7 @@
 [settings]
 disable_backends = ["asdf"]
 minimum_release_age = "2d"
+auto_install = false
 
 [settings.python]
 compile = true
