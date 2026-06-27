@@ -26,7 +26,6 @@ packages:
 
         # Editors
         # - "extras/vscode"
-        # - "main/neovim"
         - "extras/neovide"
         - "extras/alacritty"
 
@@ -36,12 +35,9 @@ packages:
 
         # CLI tools
         # - "main/tldr"
-        # - "main/yazi"
-        # - "main/gdu"
-        # - "extras/lazygit"
 
         # Others
-        # - "extras/powertoys"
+        - "extras/powertoys"
       importRegistry:
         # - '$env:USERPROFILE\scoop\apps\pwsh\current\install-explorer-context.reg'
         # - '$env:USERPROFILE\scoop\apps\pwsh\current\install-file-context.reg'
