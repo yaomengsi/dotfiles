@@ -1,24 +1,35 @@
 packages:
   common:
-    - 'git'
-    - 'curl'
-    - 'wget'
-    - 'gawk'
-    - 'tmux'
-    - 'htop'
-    - 'entr'
+    - "git"
+    - "curl"
+    - "wget"
+    - "gawk"
+    - "tmux"
+    - "htop"
+    - "entr"
   darwin:
     brews:
-    - 'git'
+      - "git"
     casks:
-    - 'google-chrome'
+      - "google-chrome"
   linux:
     fedora:
-      - 'git'
-      - 'openssl'  # curl https
-      - 'openssl-devel'  # rust sccache
-      - 'rsync'
+      - "git"
+      - "alacritty"
+      - "openssl" # curl https
+      - "openssl-devel" # rust sccache
+      - "rsync"
+      - "ibus-table-chinese-wubi-jidian"
+      # - fcitx5
+      # - fcitx5-chinese-addons
+      # - fcitx5-rime
+      # - fcitx5-configtool
+      # - fcitx5-autostart
     ubuntu:
-      - 'git'
+      - "git"
     arch:
-      - 'git'
+      - "git"
+    flathub:
+      - "com.google.Chrome"
+      # - "com.visualstudio.code"
+      - "com.bilingify.readest"

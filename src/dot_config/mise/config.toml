@@ -47,6 +47,7 @@ rust-analyzer = "latest"
 sccache = "latest"
 shellcheck = "latest"
 shfmt = "latest"
+starship = "latest"
 tlrc = { version = "latest", os = ["linux/amd64", "darwin", "windows"] }
 tmux = "latest"
 tree-sitter = "latest"

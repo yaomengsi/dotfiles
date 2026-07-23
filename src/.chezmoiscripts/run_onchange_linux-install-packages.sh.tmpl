@@ -25,6 +25,8 @@ sudo dnf install -y nmap-ncat
 sudo dnf install -y {{ .packages.common | join " " }}
 sudo dnf install -y {{ .packages.linux.fedora | join " " }}
 
+flatpak install -y flathub {{ .packages.linux.flathub | join " " }}
+
 {{   else if eq .chezmoi.osRelease.id "ubuntu" -}}
 sudo apt update
 sudo apt install -y {{ .packages.common | join " " }}
