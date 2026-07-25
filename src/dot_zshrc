@@ -166,9 +166,11 @@ if [ -f "/etc/wsl.conf" ] && [ -f "/mnt/c/Users/m/.wslconfig" ]; then
 fi
 
 # for wsl ip
-HOST_IP="$(ip route show | grep -i default | awk '{ print $3}')"
-# WSL_IP="$(hostname -I | awk '{print $1}')"
-WSL_IP="$(ip route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src") print $(i+1); exit}' || ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1 | head -1)"
+if command -v ip &> /dev/null; then
+    HOST_IP="$(ip route show | grep -i default | awk '{ print $3}')"
+    # WSL_IP="$(hostname -I | awk '{print $1}')"
+    WSL_IP="$(ip route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src") print $(i+1); exit}' || ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1 | head -1)"
+fi
 
 # if [ "${net_mode//[[:space:]]/}" = "Mirrored" ]; then
 case "${net_mode}" in
