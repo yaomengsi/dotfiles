@@ -140,6 +140,9 @@ if command -v sccache &> /dev/null; then
 fi
 
 
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+
+
 # astronvim
 alias astronvim="NVIM_APPNAME=astronvim nvim"
 alias nvide="NVIM_APPNAME=mnvim neovide --wsl"
