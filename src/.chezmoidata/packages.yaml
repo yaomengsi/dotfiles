@@ -11,7 +11,24 @@ packages:
     brews:
       - "git"
     casks:
+      - "iterm2"
       - "google-chrome"
+      - "visual-studio-code"
+      - "cursor"
+      - "chatgpt"
+      - "claude"
+      # - "wechat"
+      - "pixpin"
+      - "postman"
+      - "another-redis-desktop-manager"
+      - "dbeaver-community"
+      - "nosqlbooster-for-mongodb"
+      # - "slack"
+      # - "lark"
+      # - "wechatwork"
+      # - "citrix-workspace"
+      # - "1password"
+      # - "windows-app"
   linux:
     fedora:
       - "git"

@@ -1,6 +1,15 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+brew tap jonz94/sarasa-nerd-fonts
+brew trust jonz94/sarasa-nerd-fonts
+brew install jonz94/sarasa-nerd-fonts/font-sarasa-fixed-sc-nerd-font
+
+# nvim im-select
+brew tap laishulu/homebrew
+brew trust laishulu/homebrew
+brew install macism
+
 brew bundle --file=/dev/stdin <<EOF
 {{  range .packages.common -}}
 brew {{ . | quote }}

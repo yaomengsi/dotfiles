@@ -69,7 +69,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "Installing OrbStack"
 
     if command -v brew &> /dev/null; then
-        brew install --cask orbstack
+        # brew install --cask orbstack
         echo "Start OrbStack from Applications to finish setup"
     else
         echo "Homebrew is not installed"

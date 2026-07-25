@@ -4,7 +4,8 @@ set -eufo pipefail
 
 if [[ "$(uname)" == "Darwin" ]]; then
     if command -v brew &> /dev/null; then
-        brew install gcc
+        # brew install gcc
+        echo "skip gcc"
     else
         echo "Homebrew is not installed"
         exit 1
