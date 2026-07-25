@@ -141,10 +141,27 @@ fi
 
 
 # macos
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"'
 export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 export HOMEBREW_NO_AUTO_UPDATE="1"
 
+# ls -> eza
+if command -v eza &> /dev/null; then
+    alias ll="eza -al"
+fi
+# cat -> bat
+if command -v bat &> /dev/null; then
+    alias cat="bat"
+fi
+# find -> fd 
+if command -v fd &> /dev/null; then
+    alias find="fd"
+fi
+# grep ->  rg
+if command -v rg &> /dev/null; then
+    alias grep="rg"
+fi
 
 # astronvim
 alias astronvim="NVIM_APPNAME=astronvim nvim"
