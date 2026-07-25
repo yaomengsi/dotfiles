@@ -140,7 +140,10 @@ if command -v sccache &> /dev/null; then
 fi
 
 
+# macos
+export PATH="/opt/homebrew/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+export HOMEBREW_NO_AUTO_UPDATE="1"
 
 
 # astronvim
