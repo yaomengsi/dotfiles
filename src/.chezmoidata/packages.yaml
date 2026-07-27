@@ -32,20 +32,21 @@ packages:
   linux:
     fedora:
       - "git"
-      - "alacritty"
       - "openssl" # curl https
       - "openssl-devel" # rust sccache
       - "rsync"
+    ubuntu:
+      - "git"
+    arch:
+      - "git"
+    gui:
+      - "alacritty"
       - "ibus-table-chinese-wubi-jidian"
       # - fcitx5
       # - fcitx5-chinese-addons
       # - fcitx5-rime
       # - fcitx5-configtool
       # - fcitx5-autostart
-    ubuntu:
-      - "git"
-    arch:
-      - "git"
     flathub:
       - "com.google.Chrome"
       # - "com.visualstudio.code"
