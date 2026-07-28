@@ -142,7 +142,9 @@ fi
 
 # macos
 # export PATH="/opt/homebrew/bin:$PATH"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 export HOMEBREW_NO_AUTO_UPDATE="1"
 
