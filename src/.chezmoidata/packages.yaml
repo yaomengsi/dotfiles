@@ -12,6 +12,7 @@ packages:
       - "git"
     casks:
       - "iterm2"
+      - "warp"
       - "google-chrome"
       - "visual-studio-code"
       - "cursor"
