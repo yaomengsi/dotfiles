@@ -6,6 +6,9 @@ if (-not (Get-Command "scoop" -ErrorAction SilentlyContinue))
   exit
 }
 
+scoop bucket add sarasa-nerd-fonts https://github.com/jonz94/scoop-sarasa-nerd-fonts
+scoop install sarasa-fixed-sc-nerd-font
+
 {{ if .packages.windows.scoop.buckets }}
 Write-Host 'ADDING SCOOP BUCKETS...'
 {{   range $bucket := .packages.windows.scoop.buckets }}

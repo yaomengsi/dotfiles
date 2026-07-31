@@ -27,6 +27,7 @@ packages:
         # Editors
         # - "extras/vscode"
         - "extras/neovide"
+        - "extras/warp-terminal"
         - "extras/alacritty"
 
         # Neccessary
