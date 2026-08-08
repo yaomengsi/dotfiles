@@ -1,0 +1,25 @@
+[Unit]
+Description=OmniRoute server
+Documentation=https://github.com/diegosouzapw/OmniRoute
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+# supervisor command= → ExecStart
+Type=exec
+WorkingDirectory=%h/.omniroute
+Environment=HOME=%h
+Environment=PATH=%h/.local/share/mise/installs/node/lts/bin:%h/.local/share/mise/installs/npm-omniroute/latest/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=%h/.local/share/mise/installs/npm-omniroute/latest/bin/omniroute
+Restart=on-failure
+RestartSec=10
+# supervisor stopwaitsecs=60
+TimeoutStopSec=60
+# supervisor stopasgroup=true → signal whole cgroup
+KillMode=control-group
+# supervisor stdout/stderr log files → journald (self-rotating)
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
