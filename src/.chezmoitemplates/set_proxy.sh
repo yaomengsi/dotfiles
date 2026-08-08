@@ -5,14 +5,14 @@ HOST_IP="$(ip route show | grep -i default | awk '{ print $3}')"
 # WSL_IP="$(hostname -I | awk '{print $1}')"
 WSL_IP="$(ip route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src") print $(i+1); exit}' || ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1 | head -1)"
 
-# clash verge
-_HOST_PROXY_PORT=7897
 # mihomo
 _HOST_PROXY_PORT=7890
 # karing all
 _HOST_PROXY_PORT=3066
 # karing rules
 _HOST_PROXY_PORT=3067
+# clash verge
+_HOST_PROXY_PORT=7897
 
 PROXY_IP=${HOST_IP}
 PROXY_PORT=${_HOST_PROXY_PORT}

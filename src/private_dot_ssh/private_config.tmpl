@@ -7,9 +7,9 @@ Host github.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/github-id-rsa
     # fedora
-    #ProxyCommand connect-proxy -S `ip route show | grep -i default | awk '{ print $3}'`:7891 %h %p
-    #ProxyCommand ncat --proxy `ip route show | grep -i default | awk '{ print $3}'`:7891 --proxy-type socks5 %h %p
+    #ProxyCommand connect-proxy -S `ip route show | grep -i default | awk '{ print $3}'`:7897 %h %p
+    #ProxyCommand ncat --proxy `ip route show | grep -i default | awk '{ print $3}'`:7897 --proxy-type socks5 %h %p
     # ubuntu
-    #ProxyCommand nc -X 5 -x `ip route show | grep -i default | awk '{ print $3}'`:7891 %h %p
-    #ProxyCommand nc -X connect -x `ip route show | grep -i default | awk '{ print $3}'`:7891 %h %p
-    #ProxyCommand connect -S `ip route show | grep -i default | awk '{ print $3}'`:7891 %h %p
+    #ProxyCommand nc -X 5 -x `ip route show | grep -i default | awk '{ print $3}'`:7897 %h %p
+    #ProxyCommand nc -X connect -x `ip route show | grep -i default | awk '{ print $3}'`:7897 %h %p
+    #ProxyCommand connect -S `ip route show | grep -i default | awk '{ print $3}'`:7897 %h %p

@@ -207,14 +207,14 @@ case "${net_mode}" in
         ;;
 esac
 
-# clash verge
-_HOST_PROXY_PORT=7897
 # karing all
 _HOST_PROXY_PORT=4066
 # karing rules
 _HOST_PROXY_PORT=4067
 # mihomo
 _HOST_PROXY_PORT=7890
+# clash verge
+_HOST_PROXY_PORT=7897
 PROXY_PORT=${_HOST_PROXY_PORT}
 
 PROXY_IP_PORT="${PROXY_IP}:${PROXY_PORT}"
