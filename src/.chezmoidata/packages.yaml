@@ -4,8 +4,8 @@ packages:
     - "curl"
     - "wget"
     - "gawk"
-    - "tmux"
     - "htop"
+    - "supervisor"
     - "entr"
   darwin:
     brews:
