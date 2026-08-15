@@ -43,11 +43,22 @@ packages:
     gui:
       - "alacritty"
       - "ibus-table-chinese-wubi-jidian"
+      - "deskflow"
       # - fcitx5
       # - fcitx5-chinese-addons
       # - fcitx5-rime
       # - fcitx5-configtool
       # - fcitx5-autostart
+    gnome:
+      - gnome-extensions-app
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-system-monitor
+      - gnome-shell-extension-system-monitor-applet
+      - gnome-shell-extension-user-theme
+      - gnome-tweaks
     flathub:
       - "com.google.Chrome"
       # - "com.visualstudio.code"
