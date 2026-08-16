@@ -114,11 +114,13 @@ source ${ZSH}/oh-my-zsh.sh
 
 . "$HOME/.local/bin/env"
 
-# pnpm
+
+# pnpm: keep PNPM_HOME/bin on PATH, but append it after mise-managed paths
+# so standalone pnpm does not take precedence over mise tool paths.
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  *) export PATH="$PATH:$PNPM_HOME/bin" ;;
 esac
 # pnpm end
 

@@ -44,6 +44,12 @@ packages:
       - "alacritty"
       - "ibus-table-chinese-wubi-jidian"
       - "deskflow"
+      # - "vscode"
+      # - "cursor"
+      # - "chatgpt"
+      # - "warp-terminal"
+      # - "clash-verge"
+      # - "mihomo-party"
       # - fcitx5
       # - fcitx5-chinese-addons
       # - fcitx5-rime
@@ -63,3 +69,7 @@ packages:
       - "com.google.Chrome"
       # - "com.visualstudio.code"
       - "com.bilingify.readest"
+      # - "com.tencent.WeChat"
+      - "io.dbeaver.DBeaverCommunity"
+      - "com.getpostman.Postman"
+      - "org.telegram.desktop"
