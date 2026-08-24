@@ -35,10 +35,11 @@ node = ["24", "lts"]
 "npm:9router" = "latest"
 "npm:@colbymchenry/codegraph" = "latest"
 "npm:@cometix/ccline" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
 "npm:omniroute" = "latest"
 "npm:pm2" = "latest"
 "npm:typescript" = "latest"
-opencode = "latest"
+# opencode = "latest"
 "pipx:pre-commit" = { version = "latest", pipx_args = "--with pre-commit-uv --force-reinstall" }
 "pipx:pyrefly" = "latest"
 pnpm = "latest"

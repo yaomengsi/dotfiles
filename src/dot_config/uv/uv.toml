@@ -15,10 +15,6 @@ name = 'tsinghua'
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 
 [[index]]
-name = 'douban'
-url = "http://pypi.douban.com/simple"
-
-[[index]]
 name = 'ustc'
 url = "https://pypi.mirrors.ustc.edu.cn/simple/"
 
