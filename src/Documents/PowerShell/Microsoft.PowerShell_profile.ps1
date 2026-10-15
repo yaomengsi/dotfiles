@@ -1,5 +1,3 @@
-# (&mise activate pwsh) | Out-String | Invoke-Expression
-# (&mise completion powershell) | Out-String | Invoke-Expression
 if (-not (Test-Path $PROFILE)) {
     New-Item -ItemType File -Path $PROFILE -Force | Out-Null
 }
@@ -7,6 +5,10 @@ $activation = '(&mise activate pwsh) | Out-String | Invoke-Expression'
 if (-not (Select-String -Path $PROFILE -SimpleMatch $activation -Quiet)) {
     Add-Content $PROFILE $activation
 }
+(&mise activate pwsh) | Out-String | Invoke-Expression
+# (&mise completion powershell) | Out-String | Invoke-Expression
+# mise completions (installed via `mise completion powershell --install`)
+. "$env:LOCALAPPDATA\PowerShell\completions\mise.ps1"
 
 Invoke-Expression (&starship init powershell)
 
