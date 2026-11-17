@@ -70,7 +70,7 @@ docker compose -f ~/.config/containers/9router/compose.yaml pull   # then restar
 
 ## managed components
 
-- Shell: `zsh`, `oh-my-zsh`, `zsh-autosuggestions`, `fast-syntax-highlighting`, `direnv`, `starship`
+- Shell: `zsh`, `oh-my-zsh`, `zsh-autosuggestions`, `fast-syntax-highlighting`, `direnv`, `starship`。启动顺序（含 `/etc`）见 [docs/shell.md](docs/shell.md)
 - Editors and terminal tools: `neovim`, AstroNvim, `tmux`, `lazygit`, `yazi`
 - Runtimes: Python with `uv`, Node.js, Rust with `sccache`, Go, C/C++ toolchains
 - Services and local tooling: `supervisor`, Redis, SSH config, Git config
@@ -112,16 +112,16 @@ docker compose -f ~/.config/containers/9router/compose.yaml pull   # then restar
   - 1password
 - home
   - dotfiles
-    .zshrc
-    .zshenv
-    .bashrc
-    .profile
-    .bash_profile
+    顺序见 docs/shell.md
+    zsh 登录: /etc/zshenv .zshenv /etc/zprofile .zprofile /etc/zshrc .zshrc /etc/zlogin .zlogin
+    zsh 退出: .zlogout /etc/zlogout
+    bash 登录: /etc/profile .bash_profile | .bash_login | .profile
+    bash 交互: .bashrc（Fedora 再入 /etc/bashrc；Debian 先读 /etc/bash.bashrc）
+    bash 退出: .bash_logout /etc/bash.bash_logout
   - config
     .zshenv  EDITOR
     .zprofile  PATH
     .zshrc  alias functions prompt setopt unsetopt key_bindings oh-my-zsh-plugins
-    .bashenv
     .bash_profile
     .bashrc
     .profile
